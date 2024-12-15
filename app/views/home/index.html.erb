@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= stylesheet_link_tag "index", media: "all" %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= @title %></title>
+</head>    
+<body>
+    <section class="showcase">
+    <header>
+        <h2 class="logo">Welcome to OpenERP</h2>
+        <div class="toggle"></div>
+    </header>
+    <%= video_tag 'index-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
+    <div class="overlay"></div>
+    <div class="text">
+      <h2>Create</h2> 
+      <h3>your own flow</h3>
+      <p>OpenERP is completely open-source, and free! Your business can develop its own system and business logic rules as you see fit.</p>
+      <a>Login</a>
+    </div>
+  </section> 
+</body>
+</html>
