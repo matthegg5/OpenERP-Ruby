@@ -2,51 +2,51 @@
 const cardArray = [
     {
         name: 'fries',
-        img: '/memorygame/fries.png'
+        img: '/images/memorygame/fries.png'
     },
     {
         name: 'cheeseburger',
-        img: '/memorygame/cheeseburger.png'
+        img: '/images/memorygame/cheeseburger.png'
     },
     {
         name: 'hotdog',
-        img: '/memorygame/hotdog.png'
+        img: '/images/memorygame/hotdog.png'
     },
     {
         name: 'ice-cream',
-        img: '/memorygame/ice-cream.png'
+        img: '/images/memorygame/ice-cream.png'
     },
     {
         name: 'milkshake',
-        img: '/memorygame/milkshake.png'
+        img: '/images/memorygame/milkshake.png'
     },
     {
         name: 'pizza',
-        img: '/memorygame/pizza.png'
+        img: '/images/memorygame/pizza.png'
     },
     {
         name: 'fries',
-        img: '/memorygame/fries.png'
+        img: '/images/memorygame/fries.png'
     },
     {
         name: 'cheeseburger',
-        img: '/memorygame/cheeseburger.png'
+        img: '/images/memorygame/cheeseburger.png'
     },
     {
         name: 'hotdog',
-        img: '/memorygame/hotdog.png'
+        img: '/images/memorygame/hotdog.png'
     },
     {
         name: 'ice-cream',
-        img: '/memorygame/ice-cream.png'
+        img: '/images/memorygame/ice-cream.png'
     },
     {
         name: 'milkshake',
-        img: '/memorygame/milkshake.png'
+        img: '/images/memorygame/milkshake.png'
     },
     {
         name: 'pizza',
-        img: '/memorygame/pizza.png'
+        img: '/images/memorygame/pizza.png'
     }
 ]
 cardArray.sort(() => 0.5 - Math.random())
@@ -60,7 +60,7 @@ const cardsWon = []
 function createBoard () {
     for (let i = 0; i< cardArray.length; i++) {
         const card = document.createElement('img')
-        card.setAttribute('src','/memorygame/blank.png')
+        card.setAttribute('src','/images/memorygame/blank.png')
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard) //only calls flipCard on click as a callback - exclude the double brackets for a function call, causes weird behavior
         gridDisplay.appendChild(card)
@@ -75,23 +75,23 @@ function checkmatch() {
 
     if (optionOneId == optionTwoId) {
         alert('Same card selected twice!')
-        cards[optionOneId].setAttribute('src', '/memorygame/blank.png') //set the matched cards to white
-        cards[optionTwoId].setAttribute('src', '/memorygame/blank.png')
+        cards[optionOneId].setAttribute('src', '/images/memorygame/blank.png') //set the matched cards to white
+        cards[optionTwoId].setAttribute('src', '/images/memorygame/blank.png')
     }
 
     //check for a match here
     if(cardsChosen[0] == cardsChosen[1])
     {
         alert('Match!')
-        cards[optionOneId].setAttribute('src', '/memorygame/white.png') //set the matched cards to white
-        cards[optionTwoId].setAttribute('src', '/memorygame/white.png')
+        cards[optionOneId].setAttribute('src', '/images/memorygame/white.png') //set the matched cards to white
+        cards[optionTwoId].setAttribute('src', '/images/memorygame/white.png')
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
         cardsWon.push(cardsChosen)
 
     } else {
-        cards[optionOneId].setAttribute('src', '/memorygame/blank.png') //set the matched cards to white
-        cards[optionTwoId].setAttribute('src', '/memorygame/blank.png')
+        cards[optionOneId].setAttribute('src', '/images/memorygame/blank.png') //set the matched cards to white
+        cards[optionTwoId].setAttribute('src', '/images/memorygame/blank.png')
         alert('No match!')
     }
     resultDisplay.textContent = cardsWon.length

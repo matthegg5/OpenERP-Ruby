@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :companies
   root "home#index"           # For the Home link
   get "part", to: "home#part"
-  get "games", to: "home#games"
+  get "home/games", to: "home#games", as: :games
   get "about", to: "home#about"
 end
