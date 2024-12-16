@@ -11,6 +11,7 @@ module OpenErpRuby
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
@@ -23,5 +24,7 @@ module OpenErpRuby
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #
+    Rails.application.config.importmap.paths << Rails.root.join("config/importmap.rb")
   end
 end

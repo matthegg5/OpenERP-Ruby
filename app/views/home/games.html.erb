@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= stylesheet_link_tag "login", media: "all" %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= @title %></title>
+</head>    
+<body>
+    <section class="showcase">
+    <header>
+        <h2 class="logo">Javascript Games</h2>
+        <div class="toggle"></div>
+    </header>
+    <div class="col-md-6 offset-md-3">
+        <div class="card card-body bg-light">
+        <h3 class="logo">Score: <span id="result"></span></h3>
+            <div id="grid"></div>
+        </div>
+    </section>
+    <%= javascript_include_tag "memorygame" %>
+</body>
+</html>
