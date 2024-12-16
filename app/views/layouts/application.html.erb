@@ -3,6 +3,7 @@
 <head>
   <%= stylesheet_link_tag "site", media: "all" %>
   <%= yield :head %>
+    <%= javascript_importmap_tags %>
 </head>    
 
 <body>
@@ -16,10 +17,13 @@
   <div class="menu">
     <ul>
       <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to "Login", user_session_path %></li>  
+      <% if user_signed_in? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+      <% end %> 
       <li><%= link_to 'Part', part_path %></li>
       <li><%= link_to 'Games', games_path %></li>
-      <li><%= link_to 'About Us', about_path %></li>
     </ul>
   </div>  
 
