@@ -1,18 +1,29 @@
 # config/database.yml
 
+
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
-  pool: 5
-  username: <user_name>
-  password: <password>
-  host: localhost
-  #socket: /var/run/mysqld/mysqld.sock   # Use this line if you are using a UNIX socket
-  port: 3306
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: OpenERP-Ruby-development
+  database: storage/development.sqlite3
+
+
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8mb4
+#  pool: 5
+#  username: <user_name>
+#  password: <password>
+#  host: localhost
+  #socket: /var/run/mysqld/mysqld.sock   # Use this line if you are using a UNIX socket
+#  port: 3306
+
+#development:
+#  <<: *default
+#  database: OpenERP-Ruby-development
 
 production:
   <<: *default

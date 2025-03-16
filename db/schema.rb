@@ -11,13 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2024_12_16_142155) do
-  create_table "companies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
     t.string "CompanyId"
     t.string "Name"
     t.boolean "Active"
   end
 
-  create_table "parts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "parts", force: :cascade do |t|
     t.string "CompanyId"
     t.string "PartNum"
     t.string "PartDescription"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_142155) do
     t.string "DefaultUom"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
