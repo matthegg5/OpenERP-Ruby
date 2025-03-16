@@ -14,7 +14,9 @@ gem "jbuilder"
 gem "importmap-rails"
 # Devise provides authentication (but not authorisation)
 gem "devise"
-
+gem "rails-ujs"
+gem "rack-cors"
+gem "webpacker"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
