@@ -2,6 +2,7 @@
 <html>
 <head>
   <%= stylesheet_link_tag "site", media: "all" %>
+  <%= csrf_meta_tags %>
   <%= yield :head %>
     <%= javascript_importmap_tags %>
 </head>    
