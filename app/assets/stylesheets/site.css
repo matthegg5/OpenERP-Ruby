@@ -242,6 +242,50 @@ header .logo
   letter-spacing: 6px;
 }
 
+.submenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.submenu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-item {
+  margin: 10px 0;
+}
+
+.menu-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+
+/* Show submenu when parent item is clicked */
+.menu ul li.active > .submenu {
+  display: block;
+  width: 300px;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* Slide out the menu */
+#menu.active {
+  transform: translateX(0);
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
 @media (max-width: 991px)
 {
   .showcase,

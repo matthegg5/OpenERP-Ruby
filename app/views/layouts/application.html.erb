@@ -23,10 +23,37 @@
       <% else %>
         <li><%= link_to 'Login', new_user_session_path %></li>
       <% end %> 
+      <li>
+        <a href="#" class="menu-link">MES</a>
+        <ul class="submenu">
+          <li class="submenu-item"><a href="#">Employee Booking</a></li>
+          <li class="submenu-item"><a href="#">Production Management</a></li>
+        </ul>
+      </li>
       <li><%= link_to 'Part', part_path %></li>
       <li><%= link_to 'Games', games_path %></li>
     </ul>
   </div>  
+
+  <!-- example extension to sub-menu  -->
+<%# <div id="menu">
+  <ul class="menu-list">
+    <li class="menu-item">
+      <a href="#" class="menu-link">Option 1</a>
+      <ul class="submenu">
+        <li><a href="#">Sub Option 1A</a></li>
+        <li><a href="#">Sub Option 1B</a></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="menu-link">Option 2</a>
+      <ul class="submenu">
+        <li><a href="#">Sub Option 2A</a></li>
+        <li><a href="#">Sub Option 2B</a></li>
+      </ul>
+    </li>
+  </ul>
+</div> %>
 
   <!-- JavaScript file -->
   <%= javascript_include_tag "menu" %>
