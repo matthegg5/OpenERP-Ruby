@@ -1,0 +1,2 @@
+class PartRev < ApplicationRecord
+end

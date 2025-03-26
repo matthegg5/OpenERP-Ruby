@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :part_revs
   devise_for :users
   get "account/login", to: "account#login", as: :login_page
   get "home/index"

@@ -6,6 +6,7 @@ class CreateParts < ActiveRecord::Migration[8.0]
       t.string :PartDescription
       t.boolean :SerialTracked
       t.string :DefaultUom
+      t.boolean :PhantomBOM
     end
   end
 end

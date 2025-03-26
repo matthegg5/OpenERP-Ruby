@@ -22,30 +22,33 @@
         <h3>Part</h3>
     </div>
 
-    <div class="text">
-        <%= form.label :company_id, 'CompanyId' %>
-        <%= form.text_field :company_id, value: @current_company.to_s.upcase %>
-    </div>
+    <table>
+        <tr>
+            <td class="text"><%= form.label :company_id, 'Company ID' %></td>
+            <td><%= form.text_field :company_id, value: @current_company.to_s.upcase %></td>
+        </tr>
 
-    <div class="text">
-        <%= form.label :part_num, 'Part Number' %>
-        <%= form.text_field :part_num %>
-    </div>
+        <tr>
+            <td class="text"><%= form.label :part_num, 'Part Number' %></td>
+            <td><%= form.text_field :part_num %></td>
+        </tr>
 
-    <div class="text">
-        <%= form.label :part_description, 'Part Description' %>
-        <%= form.text_field :part_description %>
-    </div>
+        <tr>
+            <td class="text"><%= form.label :part_description, 'Part Description' %></td>
+            <td><%= form.text_field :part_description %></td>
+        </tr>
 
-    <div class="text">
-        <%= form.label :serial_tracked, 'Track Serial Numbers' %>
-        <%= form.check_box :serial_tracked %>
-    </div>
+        <tr>
+            <td class="text"><%= form.label :serial_tracked, 'Track Serial Numbers' %></td>
+            <td><%= form.check_box :serial_tracked %></td>
+        </tr>
 
-    <div class="text">
-        <%= form.label :default_uom, 'Default Unit of Measure' %>
-        <%= form.text_field :default_uom %>
-    </div>
+        <tr>
+            <td class="text"><%= form.label :default_uom, 'Default Unit of Measure' %></td>
+            <td><%= form.text_field :default_uom %></td>
+        </tr>
+    </table>
+
 
     <div class="text">
         <%= form.submit 'Create', class: 'submitButton' %>
