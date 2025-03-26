@@ -8,24 +8,24 @@ So far:
 
 Phase 1:-
 
-- parts
-- part revisions
-- warehouses
-- warehouse bins
-- bill of material
-- operations and routing
-- jobs (quick job)
-- labour booking against operations (MES)
-- user administration
+- Parts
+- Part Revisions
+- Warehouses
+- Warehouse bins
+- Bill of Material (BOM) Management
+- Operations and Routing
+- Jobs (quick job)
+- Labour booking against operations (MES)
+- User Administration
 
 
 Phase 2:-
 
-- job operations scheduling
+- Job operations scheduling
 - Manufacturing Delays during labour booking (MES)
-- sales orders
-- purchase orders
-- firm demand
+- Sales Orders
+- Purchase Orders
+- Firm Demand (from Job Materials)
 
 Phase 3:-
 
