@@ -8,8 +8,8 @@ So far:
 
 Phase 1:-
 
-- Parts
-- Part Revisions
+- Parts - WIP
+- Part Revisions - Database Table and Active Record in place
 - Warehouses
 - Warehouse bins
 - Bill of Material (BOM) Management

@@ -7,6 +7,7 @@ companies = Company.create(
     })
 
 user = User.new
+user.username = "manager"
 user.email = 'manager@openerp.com'
 user.password = 'P455@w0rd!'
 user.password_confirmation = 'P455@w0rd!'
