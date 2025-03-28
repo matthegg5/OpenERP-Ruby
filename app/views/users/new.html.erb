@@ -12,9 +12,10 @@
         <h2 class="logo"><%= @title %></h2>
         <div class="toggle"></div>
     </header>
-      <%= video_tag 'user-admin-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
-      <div class="overlay"></div>
-      <%= form_for(@user, url: registration_path(@user)) do |form| %>
+    <%= video_tag 'user-admin-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
+    <div class="overlay"></div>
+    <%= form_for(@user, url: registration_path(@user)) do |form| %>
+    <div class="loginFormArea">
       <% if @user.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -27,28 +28,64 @@
       <% end %>
       <table>
           <tr>
-              <td class="text"><%= form.label :username, 'User name:' %></td>
-              <td><%= form.text_field :username, class: 'input-box' %></td>
+              <td class="text">
+                <%= form.label :username, 'User name:' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.text_field :username %>
+                </div>
+              </td>
           </tr>
           <tr>
-              <td class="text"> <%= form.label :firstname, 'First name:' %> </td>
-              <td><%= form.text_field :firstname %></td>
+              <td class="text">
+                <%= form.label :firstname, 'First name' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.text_field :firstname %>
+                </div>
+              </td>
           </tr>
           <tr>
-              <td class="text"> <%= form.label :lastname, 'Last name:' %> </td>
-              <td><%= form.text_field :lastname %></td>
+              <td class="text">
+                <%= form.label :lastname, 'Last name:' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.text_field :lastname %>
+                </div>
+              </td>
           </tr>
           <tr>
-              <td class="text"> <%= form.label :email %> </td>
-              <td><%= form.text_field :email %></td>
+              <td class="text">
+                <%= form.label :email, 'Email' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.text_field :email %>
+                </div>
+              </td>
           </tr>
           <tr>
-              <td class="text"> <%= form.label :password %> </td>
-              <td><%= form.password_field :password %></td>
+              <td class="text">
+                <%= form.label :password, 'Password:' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.password_field :password %>
+                </div>
+              </td>
           </tr>
           <tr>
-              <td class="text"><%= form.label :password_confirmation %></td>
-              <td><%= form.password_field :password_confirmation %></td>
+              <td class="text">
+                <%= form.label :password_confirmation, 'Password confirmation:' %>
+              </td>
+              <td>
+                <div class="text">
+                    <%= form.password_field :password_confirmation %>
+                </div>
+              </td>
           </tr>
       </table>
 
@@ -56,7 +93,7 @@
           <%= form.submit 'Create', class: 'submitButton' %>
       </div>
   <% end %>
-  <%= link_to 'Back', new_user_path %>
+    </div>
   </section>
 </body>
 </html>

@@ -1,7 +1,7 @@
 class PartsController < ApplicationController
 before_action :authenticate_user!, only: [ :part, :create ]
   def part
-    @title = "OpenERP - Part Maintenance"
+    @title = "Part Maintenance"
     @current_company = "TEST"
     render
   end
