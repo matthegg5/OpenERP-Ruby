@@ -1,0 +1,12 @@
+.overlay {
+    background: rgb(34, 34, 34);
+}
+
+.input-box {
+    display: inline-block;
+    z-index: 1001;
+}
+
+td {
+    padding: 8px;
+  }

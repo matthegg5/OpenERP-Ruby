@@ -51,3 +51,7 @@ Technical Details and useful commands
 
 (rails db:drop to start over)
 
+After running seed, you can login using \ 
+username: manager \ 
+password: P455@w0rd!
+

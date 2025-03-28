@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # User Administration and Authentication
   devise_for :users
   resources :users
+  get "users/index", to: "users#index", as: :user_admin
 
   resources :part_revs
-  get "account/login", to: "account#login", as: :login_page
   get "home/index"
   resources :companies
   root "home#index"           # For the Home link
