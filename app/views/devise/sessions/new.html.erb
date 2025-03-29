@@ -12,14 +12,13 @@
         <h2 class="logo"><%= @title %></h2>
         <div class="toggle"></div>
     </header>
-        <div asp-validation-summary="ModelOnly"></div>
-        <%= video_tag 'Login-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
-        <div class="overlay"></div>
+    <%= video_tag 'Login-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
+    <div class="overlay"></div>
     <%= form_for(:user, url: user_session_path, method: :post) do |f| %>
     <div class="loginFormArea">
         <div class="text">
-        <%= f.label :email, "Email:" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :username, "Username:" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
         </div>
 
         <div class="text">

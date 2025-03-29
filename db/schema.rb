@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_16_142155) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_29_163523) do
   create_table "companies", force: :cascade do |t|
     t.string "CompanyId"
     t.string "Name"
     t.boolean "Active"
+  end
+
+  create_table "part_revs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "CompanyId"
+    t.string "PartNum"
+    t.string "RevisionNum"
+    t.string "RevisionNote"
+    t.date "EffectiveDate", default: -> { "CURRENT_DATE" }, null: false
   end
 
   create_table "parts", force: :cascade do |t|
@@ -23,6 +33,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_142155) do
     t.string "PartDescription"
     t.boolean "SerialTracked"
     t.string "DefaultUom"
+    t.boolean "PhantomBOM"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,7 +44,11 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_142155) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 end

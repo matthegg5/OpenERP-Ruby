@@ -11,3 +11,6 @@ input {
   display: inline-block;
   float: left;
 }
+td {
+  padding: 8px;
+}
