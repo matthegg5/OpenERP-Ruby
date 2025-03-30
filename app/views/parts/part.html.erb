@@ -12,7 +12,7 @@
         <h2 class="logo"><%= @title %></h2>
         <div class="toggle"></div>
     </header>
-    <%= form_with(url: part_create_path, method: :post) do |form| %>
+    <%= form_with(model: @part, local: true, url: part_create_path, method: :post) do |form| %>
     <div>
         <div class="notice"><%= notice %></div>
         <div class="alert"><%= alert %></div>
@@ -24,28 +24,28 @@
 
     <table>
         <tr>
-            <td class="text"><%= form.label :company_id, 'Company ID' %></td>
-            <td><%= form.text_field :company_id, value: @current_company.to_s.upcase %></td>
+            <td class="text"><%= form.label :CompanyId, 'Company ID' %></td>
+            <td><%= form.text_field :CompanyId, value: @current_company.to_s.upcase %></td>
         </tr>
 
         <tr>
-            <td class="text"><%= form.label :part_num, 'Part Number' %></td>
-            <td><%= form.text_field :part_num %></td>
+            <td class="text"><%= form.label :PartNum, 'Part Number' %></td>
+            <td><%= form.text_field :PartNum %></td>
         </tr>
 
         <tr>
-            <td class="text"><%= form.label :part_description, 'Part Description' %></td>
-            <td><%= form.text_field :part_description %></td>
+            <td class="text"><%= form.label :PartDescription, 'Part Description' %></td>
+            <td><%= form.text_field :PartDescription %></td>
         </tr>
 
         <tr>
-            <td class="text"><%= form.label :serial_tracked, 'Track Serial Numbers' %></td>
-            <td><%= form.check_box :serial_tracked %></td>
+            <td class="text"><%= form.label :SerialTracked, 'Track Serial Numbers' %></td>
+            <td><%= form.check_box :SerialTracked %></td>
         </tr>
 
         <tr>
-            <td class="text"><%= form.label :default_uom, 'Default Unit of Measure' %></td>
-            <td><%= form.text_field :default_uom %></td>
+            <td class="text"><%= form.label :DefaultUom, 'Default Unit of Measure' %></td>
+            <td><%= form.text_field :DefaultUom %></td>
         </tr>
     </table>
 
