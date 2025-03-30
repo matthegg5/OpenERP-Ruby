@@ -59,3 +59,15 @@
 .score {
     color: white
 }
+
+.notice {
+    color: yellow;
+    z-index: 1003;
+    position: relative;
+}
+
+.alert {
+    color: red;
+    font-weight: bold;
+    z-index: 1004;
+}
