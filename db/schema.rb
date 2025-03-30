@@ -12,9 +12,10 @@
 
 ActiveRecord::Schema[8.0].define(version: 2025_03_29_163523) do
   create_table "companies", force: :cascade do |t|
-    t.string "CompanyId"
+    t.string "CompanyId", null: false
     t.string "Name"
     t.boolean "Active"
+    t.index ["CompanyId"], name: "index_companies_on_CompanyId", unique: true
   end
 
   create_table "part_revs", force: :cascade do |t|
@@ -28,12 +29,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_163523) do
   end
 
   create_table "parts", force: :cascade do |t|
-    t.string "CompanyId"
-    t.string "PartNum"
+    t.string "CompanyId", null: false
+    t.string "PartNum", null: false
     t.string "PartDescription"
     t.boolean "SerialTracked"
     t.string "DefaultUom"
     t.boolean "PhantomBOM"
+    t.index ["CompanyId", "PartNum"], name: "index_parts_on_CompanyId_and_PartNum", unique: true
   end
 
   create_table "users", force: :cascade do |t|
