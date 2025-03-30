@@ -21,6 +21,6 @@ before_action :authenticate_user!, only: [ :part, :create ]
 
   # Strong parameters to whitelist the form inputs
   def part_params
-    params.require(:part).permit(:CompanyId, :PartNum, :PartDescription, :SerialTracked, :DefaultUom)
+    params.require(:part).permit(:CompanyId, :PartNum, :PartDescription, :SerialTracked, :DefaultUom, :PhantomBOM)
   end
 end
