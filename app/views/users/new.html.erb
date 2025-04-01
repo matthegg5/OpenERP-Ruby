@@ -14,7 +14,11 @@
     </header>
     <%= video_tag 'user-admin-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
     <div class="overlay"></div>
-    <%= form_for(@user, url: registration_path(@user)) do |form| %>
+    <%= form_for @user do |form| %>
+      <div>
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+    </div>
     <div class="loginFormArea">
       <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -63,7 +67,7 @@
               </td>
               <td>
                 <div class="text">
-                    <%= form.text_field :email %>
+                    <%= form.email_field :email, required: true %>
                 </div>
               </td>
           </tr>
