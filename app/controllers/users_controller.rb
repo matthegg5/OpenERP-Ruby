@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    Rails.logger.debug "Parameters: #{params.inspect}"
     @user = User.new(user_params)
     if @user.save
       redirect_to @user, notice: "User was successfully created."
@@ -46,6 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation)
   end
 end

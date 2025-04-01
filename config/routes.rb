@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # User Administration and Authentication
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   resources :users
   get "users/index", to: "users#index", as: :user_admin
 
