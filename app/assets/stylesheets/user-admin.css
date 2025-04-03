@@ -9,4 +9,14 @@
 
 td {
     padding: 8px;
+    color: white
   }
+
+th {
+    padding: 8px;
+    color: white;
+}
+
+table {
+    position: absolute;
+}
