@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       @user.destroy
       redirect_to users_path, notice: "User was successfully deleted."
     else
-      redirect_to users_patg, alert: "User not found."
+      redirect_to users_path, alert: "User not found."
     end
   end
 
