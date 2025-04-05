@@ -16,12 +16,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    Rails.logger.debug "Parameters: #{params.inspect}"
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: "User was successfully created."
+      redirect_to users_path, notice: "User #{@user.username} was successfully created."
     else
-      render :new
+      redirect_to users_path, alert: "User #{@user.username} creation failed"
     end
   end
 
@@ -37,14 +36,19 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: "User was successfully deleted."
+    @user = User.find_by(id: params[:id])
+    if @user
+      @user.destroy
+      redirect_to users_path, notice: "User was successfully deleted."
+    else
+      redirect_to users_patg, alert: "User not found."
+    end
   end
 
   private
 
   def set_user
-    @user = User.find(params[:id])
+   @user = User.find(params[:id])
   end
 
   def user_params
