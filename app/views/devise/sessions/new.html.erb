@@ -15,19 +15,23 @@
     <%= video_tag 'Login-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
     <div class="overlay"></div>
     <%= form_for(:user, url: user_session_path, method: :post) do |f| %>
+    <div class="text">
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+    </div>
     <div class="loginFormArea">
         <div class="text">
-        <%= f.label :username, "Username:" %>
-        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+            <%= f.label :username, "Username:" %>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
         </div>
 
         <div class="text">
-        <%= f.label :password, "Password:" %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.label :password, "Password:" %>
+            <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
         </div>
         <div class="text">
-        <%= f.submit "Login", class: "submitButton" %>
+            <%= f.submit "Login", class: "submitButton" %>
         </div>
         <div class="text notice"><%= notice %></div>
         <div class="text alert"><%= alert %></div>
