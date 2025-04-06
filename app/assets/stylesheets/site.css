@@ -269,5 +269,11 @@ header .logo
 }
 
 .notice {
-  color: yellow
+  color: yellow;
+  z-index: 10;
+}
+
+.alert {
+  color: yellow;
+  z-index: 10;
 }

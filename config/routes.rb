@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   resources :users
   get "users/new", to: "users#new", as: :user_new
-  get "users/index", to: "users#index", as: :user_admin
+  get "users", to: "users#index", as: :user_admin
 
   resources :part_revs
   get "home/index"

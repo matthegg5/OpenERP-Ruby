@@ -15,14 +15,6 @@ class UsersController < ApplicationController
     render
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to users_path, notice: "User #{@user.username} was successfully created."
-    else
-      redirect_to users_path, alert: "User #{@user.username} creation failed"
-    end
-  end
 
   def edit
   end
@@ -32,16 +24,6 @@ class UsersController < ApplicationController
       redirect_to @user, notice: "User was successfully updated."
     else
       render :edit
-    end
-  end
-
-  def destroy
-    @user = User.find_by(id: params[:id])
-    if @user
-      @user.destroy
-      redirect_to users_path, notice: "User was successfully deleted."
-    else
-      redirect_to users_path, alert: "User not found."
     end
   end
 
