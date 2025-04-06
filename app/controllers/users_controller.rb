@@ -27,6 +27,19 @@ class UsersController < ApplicationController
     end
   end
 
+ def destroy
+    @user = User.find_by(id: params[:id])
+    if @user
+      # Ensure admin session is intact (sign out user before deleting, but don't sign out the admin)
+      sign_out(current_user) if current_user && current_user != @user
+
+      @user.destroy
+      redirect_to users_path(current_user), notice: "User was successfully deleted."
+    else
+      redirect_to users_path(current_user), alert: "User not found."
+    end
+  end
+
   private
 
   def set_user
