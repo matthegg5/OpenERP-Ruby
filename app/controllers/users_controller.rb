@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
+    @title = "User Index"
+    @users = User.all.order(:username)
   end
 
   def show
@@ -14,15 +15,6 @@ class UsersController < ApplicationController
     render
   end
 
-  def create
-    Rails.logger.debug "Parameters: #{params.inspect}"
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to @user, notice: "User was successfully created."
-    else
-      render :new
-    end
-  end
 
   def edit
   end
@@ -35,15 +27,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user.destroy
-    redirect_to users_url, notice: "User was successfully deleted."
+ def destroy
+    @user = User.find_by(id: params[:id])
+    if @user
+      # Ensure admin session is intact (sign out user before deleting, but don't sign out the admin)
+      sign_out(current_user) if current_user && current_user != @user
+
+      @user.destroy
+      redirect_to users_path(current_user), notice: "User was successfully deleted."
+    else
+      redirect_to users_path(current_user), alert: "User not found."
+    end
   end
 
   private
 
   def set_user
-    @user = User.find(params[:id])
+   @user = User.find(params[:id])
   end
 
   def user_params
