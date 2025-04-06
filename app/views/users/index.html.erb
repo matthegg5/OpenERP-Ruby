@@ -14,15 +14,7 @@
     </header>
   
     <%= video_tag 'user-admin-background.mp4', controls: false, autoplay: true, loop: true, muted: true %>
-    <div class="overlay"></div>
-    
-    <div class="notice"><%= notice %></div>
-    <div class="alert"><%= alert %></div> 
-
-    <div>
-      <div class="text"> <%= link_to 'New User', new_user_path %> </div>
-    </div>
-    
+    <div class="overlay"></div>      
     <table>
       <thead>
         <tr>
@@ -45,8 +37,17 @@
               </td>
           </tr>
         <% end %>
+          <tr>
+            <td>
+              <div class="text"> <%= link_to 'New User', new_user_path %> </div>
+            </td>
+          </tr>
       </tbody>
-    </table>   
+    </table>
+    <div>
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+    </div>   
   </section>
 </body>
 </html>

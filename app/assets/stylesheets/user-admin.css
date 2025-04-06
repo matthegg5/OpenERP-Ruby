@@ -20,3 +20,7 @@ th {
 table {
     position: absolute;
 }
+
+.submitButton {
+    z-index: 1050;
+}
